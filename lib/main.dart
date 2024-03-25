@@ -2,6 +2,8 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
+import 'view/principal_view.dart';
+
 void main() {
   runApp(
     DevicePreview(
@@ -19,11 +21,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Alexcolman - App Avaliação 1',
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: PrincipalView(),
     );
   }
 }
