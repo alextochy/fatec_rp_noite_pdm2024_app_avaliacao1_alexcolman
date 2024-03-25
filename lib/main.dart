@@ -3,6 +3,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 import 'view/principal_view.dart';
+import 'view/tela1_view.dart';
 
 void main() {
   runApp(
@@ -22,6 +23,16 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Alexcolman - App Avaliação 1',
       home: PrincipalView(),
+      //
+      // ROTAS DE NAVEGAÇÂO
+      //
+      initialRoute: 't0',
+      routes: {
+        't0': (context) => PrincipalView(),
+        't1': (context) => Tela1View(),
+        //'t2':(context) => Tela2View(),
+        //'t3':(context) => Tela3View(),
+      },
     );
   }
 }
