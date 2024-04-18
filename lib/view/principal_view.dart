@@ -12,20 +12,58 @@ class PrincipalView extends StatefulWidget {
 class _PrincipalViewState extends State<PrincipalView> {
   @override
   Widget build(BuildContext context) {
+    // final String usuario = ModalRoute.of(context)!.settings.arguments as String;
+
     return Scaffold(
       //Barra de Título
       appBar: AppBar(
         toolbarHeight: 50,
-        leading: Icon(Icons.account_circle_rounded),
-        title: Text('App Avaliação 1', style: TextStyle(color: Colors.white)),
-        actions: [
-          Icon(Icons.more_vert),
-        ],
+        centerTitle: true,
+        title: const Text('Lista de Compras',
+            style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blueAccent,
       ),
-      body: Center(
-        child: Text('Hello World!'),
+      drawer: Drawer(
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blueAccent,
+              ),
+              child: Text('Perfil', style: TextStyle(color: Colors.white)),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+              child: ListTile(
+                leading: Icon(
+                  Icons.info_outline,
+                ),
+                title: const Text('Sobre'),
+                onTap: () {
+                  Navigator.pushNamed(context, "t4");
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+              child: ListTile(
+                leading: Icon(
+                  Icons.logout,
+                ),
+                title: const Text('Sair'),
+                onTap: () {
+                  Navigator.pushNamed(context, "t0");
+                },
+              ),
+            ),
+          ],
+        ),
       ),
+      body: Center(
+          //child: Text(usuario),
+          ),
     );
   }
 }

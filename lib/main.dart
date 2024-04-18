@@ -2,8 +2,11 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
+import 'view/login_view.dart';
+import 'view/cadastro_view.dart';
+import 'view/esqueceu-senha_view.dart';
 import 'view/principal_view.dart';
-import 'view/tela1_view.dart';
+import 'view/sobre_view.dart';
 
 void main() {
   runApp(
@@ -22,16 +25,17 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Alexcolman - App Avaliação 1',
-      home: PrincipalView(),
+      home: LoginView(),
       //
       // ROTAS DE NAVEGAÇÂO
       //
-      initialRoute: 't0',
+      initialRoute: "t0",
       routes: {
-        't0': (context) => PrincipalView(),
-        't1': (context) => Tela1View(),
-        //'t2':(context) => Tela2View(),
-        //'t3':(context) => Tela3View(),
+        "t0": (context) => LoginView(),
+        "t1": (context) => CadastroView(),
+        't2': (context) => EsqueceuSenhaView(),
+        't3': (context) => PrincipalView(),
+        't4': (context) => SobreView()
       },
     );
   }
